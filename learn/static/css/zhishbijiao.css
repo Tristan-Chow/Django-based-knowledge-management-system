@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+label{
+	font-family:"黑体";
+	color:#FFF;
+}
+.data{
+	position: absolute;
+	top: 801px;
+	width: 100%;
+	background-color: #FFF;
+	left: auto 0;
+	height: 200px;
+	overflow: auto;
+}
+.result th{
+	color:#FFF;
+}
+.result td{
+	border-style:dotted;
+}
+.backimage{
+	background: url(../images/背景.jpg) no-repeat center center;
+	background-size:100% 100%;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 700px;
+}
+
+

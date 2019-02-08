@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+.gongnengqu{
+	position:absolute;
+	top:170px;
+	width:100%;
+}
+label{
+	color:#
+	;
+	background-color:#09F;
+	font-family:"黑体";
+	
+}
+.contactinformation{
+	background-color:#FFF;
+	height:500px;
+	overflow:auto;
+}
+td{
+	background-color:#09F;
+}
+.contactinformation td{
+	background-color:#FFF;
+}

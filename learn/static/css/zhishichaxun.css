@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+.formTitle{
+	font-family:"黑体";
+	font-weight:bold;
+	color:#FFF;	
+}
+.resultTitle{
+	width: 500px;
+	background-color: #0000CC;
+	font-family: "黑体";
+	font-weight: bold;
+	color: #FFF;
+	position:absolute;
+	top:380px;
+}
+#warning{
+	margin-left:250px;
+	color:#F00;
+	position:absolute;
+	top:350px;
+}
+.resultTitle{
+	width:100%;
+}
+.showData{
+	border: solid;
+	border-width: thin;
+	height: 300px;
+	width: 100%;
+	overflow: auto;
+	position: absolute;
+	top: 400px;
+	left: 9px;
+}
+.mainpart{
+	width:100%;
+	top:180px;
+	position:absolute;
+}
+
+th{
+	font-family:"黑体";
+	font-weight:bold;
+	color:#FFF;	
+	background-color:#00F;
+}
+.showData td{
+	font-family:Tahoma, Geneva, sans-serif;
+	border-style:double;
+}
+.backimage{
+	background: url(../images/背景.jpg) no-repeat center center;
+	background-size:100% 100%;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 700px;
+}
