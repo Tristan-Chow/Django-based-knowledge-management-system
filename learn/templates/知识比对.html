@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../static/css/zhuyezhuanshi.css" rel="stylesheet" />
+<link type="text/css" href="../static/css/zhishbijiao.css" rel="stylesheet" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<div class='theme'>
+  <div id='logo'>
+  <a href="www.dlut.edu.cn"><img src="../static/images/logo.jpg" width="524" height="59" /></a>
+  </div>
+  <div class='theme-right'>
+    <ul>
+      <li><a href="">English </a></li>
+      <li>|</li>
+      <li><a href="">Chinese </a></li>
+    </ul>
+  </div>
+  <div class='navigatable'> 
+    <ul class='nav'>
+      <li><a href="/crawlknowledge/" target="_blank">知识获取</a></li>
+      <li><a href="/uploadknowledge/" target="_blank">知识贡献</a></li>
+      <li><a href="/query/" target="_blank">知识查询</a></li>
+      <li><a href="/compareKnowledge/" target="_blank">知识比对</a></li>
+      <li><a href="/email/">电子邮件</a></li>
+    </ul>  
+  </div>
+</div>
+
+
+<div>
+  <img src="../static/images/logo1.jpg" width="100%" height="71"/>
+</div>
+<div class='backimage'>
+<div style="position:absolute;top:190px;">
+<form action="/getContent/" method="post" id="1">
+{% csrf_token %}
+  <table>
+    <tr><td bgcolor="#0000FF"><label>知识类型</label></td><td width="223"><select name="knowledgeType"/>
+        <option value="file">文档</option>
+        <option value="data">数据</option>
+        <option value="chart">图表</option>
+        </select></td><td width="64" bgcolor="#0000FF"><label>知识主题</label></td><td width="75">
+        <select name="knowledgeField">
+        <option value="装置">装置</option>
+        <option value="设备">设备</option>
+        <option value="其他">其他</option>
+        </select></td></tr>
+    <tr><td bgcolor="#0000FF"><label>版本号</label></td><td colspan="3" align="center"><input type="text" name="knowledgeNo"/></td></tr>   
+    <tr><td width="95" bgcolor="#0000FF"><label>最新版本</label></td><td align="center" colspan="3"><textarea name="link1" cols="20" rows="1">{{newestVersion}}</textarea></td></tr>
+    <tr><td bgcolor="#0000FF"><label>选择比较版本</label></td><td colspan="3"><input type="text" value={{compareversion}}><select name="knowledgeversion"> 
+        <option value="1">01</option>
+        <option value="2">02</option>
+        <option value="3">03</option>
+        </select></td></tr>
+    <tr><td align="center" colspan="4"><input type="submit" value="提交"></td></tr>
+  </table> 
+</form>
+</div>
+
+<div style="position: absolute; top: 370px;">
+<form action="/compareContent/" method="post">
+{% csrf_token %}
+<table>
+  <tr bgcolor="#0000FF"><th width="558"><label>文章1内容</label></th><th width="661"><label>文章2内容</label></th></tr>
+  <tr><td align="center"><textarea name="content1" cols="50" rows="20">{{content1}}</textarea></td><td align="center"><textarea name="content2" cols="50" rows="20">{{content2}}</textarea></td></tr>
+  <tr><td height="23" colspan="2" align="center"><input type="submit" /></td></tr>
+</table>
+</form>
+</div>
+<div class='data'>
+  <div class='1'>
+    <table width="100%" class='result'>
+               <thead><tr bgcolor="#0000FF"><th width="27%">行号</th><th width="33%">文章1内容</th><th width="40%">文章2内容</th></tr></thead>
+               <tbody>
+                   {%for key,value in content3.items%}          
+                  <tr><td align="center">{{key}}</td><td align="center">{{value.0}}</td><td align="center">{{value.1}}</td></tr>
+                  {% endfor %}                  
+               </tbody>
+             </table>
+  </div>
+</div>
+</div>
+</body>
+</html>

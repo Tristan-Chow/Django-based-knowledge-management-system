@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../static/css/loginzhuangshi.css" rel="stylesheet" /> 
+<link type="text/css" href="../static/css/zhuyezhuanshi.css" rel="stylesheet" />
+<title>登录界面</title>
+</head>
+
+<body>
+<div class='theme'>
+  <div id='logo'>
+  <a href="www.dlut.edu.cn"><img src="../static/images/logo.jpg" width="524" height="59" /></a>
+  </div>
+  <div class='theme-right'>
+    <ul>
+      <li><a href="">English </a></li>
+      <li>|</li>
+      <li><a href="">Chinese </a></li>
+    </ul>
+  </div>
+</div>
+
+<div>
+  <img src="../static/images/logo1.jpg" width="100%" height="71"/>
+</div>
+<div class='backImage'>
+
+    <div class='login'>
+     
+     <div class='logincontent'>
+      <form action="/login/" method="post">
+       {% csrf_token %}
+       <div id='warning'>{{string}}</div>
+       <table width="403">
+       <tr>
+        <td width="127"><label style="color:#F00">账号</label></td>
+        <td colspan="2"><input name="loginname" type="text" au autocomplete="off" required/></td>
+       </tr>
+       <tr>
+        <td><label style="color:#F00" >密码</label></td>
+        <td colspan="2"><input name="password" type="password" autocomplete="off" required/></td>
+       </tr>
+       <tr>
+        <td width="50" height="25"><a href="">员工入口</a></td>       
+        <td><a href="">管理人员入口</a></td>
+       </tr>
+       <tr>
+        <td width="62" height="30"><a href="">新用户注册</a></td>
+        <td width="62"><a href="">重置密码</a></td>
+       </tr>
+       <tr width="450">  
+        <td height="48" colspan="3"><input name="提交" type="submit" value="登录"/>   <input name="退出" type="reset" value="退出"/>			</td>
+       </tr>
+       </table> 
+      </form>
+     </div>
+    </div>
+</div>
+<dlv class='footer'>
+  <ul>
+   <li class="cli">中国石油天然气集团公司</li>
+   <li class="cliy">版权所有2014</li>
+   <li class="seperate">|</li>
+   <li class="laws">法律声明</li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../static/css/uploadknowledge.css" rel="stylesheet" /> 
+<link type="text/css" href="../static/css/zhuyezhuanshi.css" rel="stylesheet" />
+<title>内部知识上传</title>
+<script>
+  function alert_Info()
+  {
+	 confirm("你确定要清空吗？");
+  }
+  function  confirm_Info()
+  {
+	 confirm("知识已提交成功！")
+  }
+</script>
+</head>
+
+<body>
+<div class='theme'>
+  <div id='logo'>
+  <a href="www.dlut.edu.cn"><img src="../static/images/logo.jpg" width="524" height="59" /></a>
+  </div>
+  <div class='theme-right'>
+    <ul>
+      <li><a href="">English </a></li>
+      <li>|</li>
+      <li><a href="">Chinese </a></li>
+    </ul>
+  </div>
+  <div class='navigatable'> 
+    <ul class='nav'>
+      <li><a href="/crawlknowledge/" target="_blank">知识获取</a></li>
+      <li><a href="/uploadknowledge/" target="_blank">知识贡献</a></li>
+      <li><a href="/query/" target="_blank">知识查询</a></li>
+      <li><a href="/compareKnowledge/" target="_blank">知识比对</a></li>
+      <li><a href="/email/">电子邮件</a></li>
+    </ul>  
+  </div>
+</div>
+
+
+<div>
+  <img src="../static/images/logo1.jpg" width="100%" height="71"/>
+</div>
+<div class="knowledgeform">
+<form action="/upload/" method="POST" enctype="multipart/form-data" >
+{% csrf_token %}
+<table width="654" bgcolor="#CCCCCC">
+ <tr><td colspan="4" bgcolor="#0000FF" align="center"><p>知识相关信息</p></td></tr>
+ <tr><td width="82"><label>知识题目</label></td><td width="266" height="52"><input type="text" name="knowledgeTitle"/></td><td width="56"><label>版本号</label></td><td width="224" height="52"><input type="text" name="knowledgeModelNo"/></td></tr>
+ <tr><td><label>知识类型</label><span>*</span></td><td height="49"><select name="knowledgeType"/>
+        <option value="file">文档</option>
+        <option value="data">数据</option>
+        <option value="chart">图表</option>
+        </select></td></tr>
+ <tr><td><label>知识领域</label><span>*</span></td><td height="51"><select name="knowledgeField">
+        <option value="装置">装置</option>
+        <option value="设备">设备</option>
+        <option value="其他">其他</option>
+        </select></td></tr>
+ <tr><td colspan="4" bgcolor="#0000FF" align="center"><p>其他信息</p></td></tr>
+ <tr><td><label>贡献时间</label></td><td height="42"><input type="text" name="knowledgedevotionTime" readonly="readonly" value={{localtime}}></td></tr>
+ <tr><td><label>知识贡献人</label><span>*</span></td><td height="70"><input type="text" name="knowledgedevoter"  readonly="readonly" value={{username}}></td></tr>
+ <tr><td><label>备注信息</label></td><td height="139" colspan="3"><textarea class="remarks" name="knowledgeRemarks"></textarea></td></tr>
+ <tr><td><label>上传</label></td><td height="58"><input type="file" name="fileitem"/></td></tr>
+ <tr><td height="64" colspan="2" align="center"><input  class="button" type="submit" value="上传" onclick="confirm_Info()"/></td><td height="64" colspan="2" align="center"><input class="button" type="reset" value="重置" onclick="alert_Info()"/></td></tr>
+</table>
+</form>
+</div>
+<div class='warningpart'>
+ <br/>
+ <br/>
+ <p>注意事项</p>
+ <p>1.带红色星号部分为必填项</p>
+ <p>2.贡献时间的填写格式为“YYYY-MM-DD”</p>
+ <p>3.若时间部分未填保存为当前系统时间</p>
+ <p>4.额外事项请在备注部分说明</p>
+</div>
+</body>
+</html>
